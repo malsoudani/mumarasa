@@ -18,4 +18,12 @@
     - Map: Much like other programming languages, basically a key, value store.
     - Channels: can be used as communication between Goroutines, More on that later.
 
-    
+* User Defined Types
+    - In Go there is no inheretence and other oop techniques used.
+    - to compensate for that we have user defined types that are declared as follows : `type MySpecialType redifenition-of`
+    example: `type Greeting string`
+
+* Function in Go
+    - Go functions can have multiple return types
+    - A function in go can be used like any other type.
+    - Function literals, lets us define function within a function where the inner function can remember the context that the function was declated at, much like clousures in other languages.
