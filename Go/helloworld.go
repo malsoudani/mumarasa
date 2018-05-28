@@ -11,9 +11,26 @@ func CreateMessage(a, b string) (string, string) {
 	return b + " " + a, "Hey " + a
 }
 
-func Greet(salutation Salutation) { //function definition example
+func Greet(salutation Salutation, do Printer) { //function definition example
 	message, alternate := CreateMessage(salutation.name, salutation.greeting)
-	fmt.Println(message, alternate)
+	do(message)
+	do(alternate)
+}
+
+type Printer func(string) () 	//declaring a custom function type as with a specific blueprint
+								//pretty much here we are saying that Printer redefines the blueprint func(string) ()
+func Print(s string) {
+	fmt.Print(s)
+}
+
+func Println(s string) {
+	fmt.Println(s)
+}
+
+func CreatePrintFunction(custom string) Printer {	// creating a function that returns a Printer
+	return func(s string) {							// which is a closure defined within the parent
+		fmt.Println(s + custom)						// that uses the resources of the parent function
+	}												// and returns the value of that function
 }
 
 func main() {
@@ -32,7 +49,7 @@ func main() {
 
 	var s = Salutation{"Bob", "wassap"} // example of using user defined type
 
-	Greet(s)
+	Greet(s, CreatePrintFunction("!!!!"))
 
 
 }

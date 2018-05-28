@@ -27,3 +27,8 @@
     - Go functions can have multiple return types
     - A function in go can be used like any other type.
     - Function literals, lets us define function within a function where the inner function can remember the context that the function was declated at, much like clousures in other languages.
+
+* passing functions in go: 
+    - functions can be treated as variables to the extent of passing it and assigning it to a variable function that takes a given parameter.
+    - a function can be used as a custom type example: `type MySpecialFunction func(string) ()`
+    - closures can be utilized to define a function to be called within a parent function, and to place a different customization level on the function.
