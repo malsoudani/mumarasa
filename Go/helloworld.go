@@ -11,4 +11,9 @@ func main() {
 
 	fmt.Println(message, *greeting);
 	//output is: Hello Go World! Hello Go World!
+	
+	*greeting = "hi"
+	fmt.Println(message, *greeting);
+	//output is: hi hi
+
 }
