@@ -51,5 +51,4 @@ func main() {
 
 	Greet(s, CreatePrintFunction("!!!!"))
 
-
 }
