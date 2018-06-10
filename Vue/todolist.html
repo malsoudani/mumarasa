@@ -8,8 +8,15 @@
 </head>
 <body>
     <div id="app">
-        <h1>{{ title }}</h1>
-        <h2>By {{ author }}</h2>
+        <h1>Tasks</h1>
+        <ul>
+            <li v-for="task in completed">{{ task.text }}, Done: {{ task.done }}</li>
+        </ul>
+
+        <h1>Open Tasks</h1>
+        <ul>
+            <li v-for="task in open">{{ task.text }}, Done: {{ task.done }}</li>
+        </ul>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
@@ -17,8 +24,19 @@
         const vm = new Vue({
             el: '#app',
             data: {
-                title: 'Learning Vue',
-                author: 'Mohamed Alsoudani'
+                tasks: [
+                    {text: "learn Vue", done: false},
+                    {text: "do the Go backend", done: true},
+                    {text: "build Vue frontend for softpull", done: false}
+                ]
+            },
+            computed: {
+                open() {
+                    return this.tasks.filter(t => !t.done)
+                },
+                completed() {
+                    return this.tasks.filter(t => t.done)
+                }
             }
         })
     </script>
