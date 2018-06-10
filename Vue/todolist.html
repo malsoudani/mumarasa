@@ -10,12 +10,16 @@
     <div id="app">
         <h1>Tasks</h1>
         <ul>
-            <li v-for="task in completed">{{ task.text }}, Done: {{ task.done }}</li>
+            <li v-for="task in completed">{{ task.text }}, Done: {{ task.done }}
+                <button v-on:click="toggle(task)">Mark as open</button>
+            </li>
         </ul>
 
         <h1>Open Tasks</h1>
         <ul>
-            <li v-for="task in open">{{ task.text }}, Done: {{ task.done }}</li>
+            <li v-for="task in open">{{ task.text }}, Done: {{ task.done }}
+                <button v-on:click="toggle(task)">Mark as done</button>
+            </li>
         </ul>
     </div>
 
@@ -37,6 +41,12 @@
                 completed() {
                     return this.tasks.filter(t => t.done)
                 }
+            },
+            methods: {
+                toggle(task) {
+                    const i = this.tasks.indexOf(task)
+                    this.tasks[i].done = !this.tasks[i].done
+                },
             }
         })
     </script>
