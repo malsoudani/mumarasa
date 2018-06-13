@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app" data-url="fake/url/for/testing">
+        <h1>Favorite Fruits</h1>
+        <ul>
+            <li v-for="fruit in fruits">{{ fruit }}</li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script>
+        function fakeAjax() {
+            return Promise.resolve(
+                ["Kiwi", "watermelon", "Grapes", "Apricot"]
+            )
+        }
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                fruits: [],
+            },
+            async mounted() {
+                const url = this.$el.dataset.url
+                this.fruits = await fakeAjax()
+            }
+        })
+    </script>
+</body>
+</html>
