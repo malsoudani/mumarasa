@@ -9,9 +9,12 @@
 <body>
     <div id="app" data-url="fake/url/for/testing">
         <h1>Favorite Fruits</h1>
-        <ul>
-            <li v-for="fruit in fruits">{{ fruit }}</li>
-        </ul>
+
+        <fruit v-for="fruit in fruits" v-bind:name="fruit">{{ fruit }}</fruit>
+
+        <script type="x-template" id="fruit">
+
+        </script>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
@@ -21,6 +24,23 @@
                 ["Kiwi", "watermelon", "Grapes", "Apricot"]
             )
         }
+
+        Vue.component('fruit', {
+            data() {
+                // return {
+                //     name: 'Fruit'
+                // }
+            },
+            props: {
+                name: String
+            },
+            template: `
+                <h1>{{ name }}</h1>
+            `,
+            computed: {
+                
+            }
+        })
         const vm = new Vue({
             el: '#app',
             data: {
