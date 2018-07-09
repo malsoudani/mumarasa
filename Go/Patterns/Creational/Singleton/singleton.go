@@ -1,5 +1,7 @@
 package singleton
 
+import "fmt"
+
 type Singleton interface {
 	AddOne() int
 }
@@ -11,9 +13,14 @@ type singleton struct {
 var instance *singleton
 
 func GetInstance() Singleton {
-	return nil
+	if instance == nil {
+		instance = new(singleton)
+	}
+	return instance
 }
 
 func (s *singleton) AddOne() int {
-	return 0
+	s.count++
+	fmt.Println(s.count)
+	return s.count
 }
