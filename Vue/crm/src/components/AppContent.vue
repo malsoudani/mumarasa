@@ -1,11 +1,15 @@
 <template>
     <div id="content" class="">
-        <h1>AppContent</h1>
+        <Form />
     </div>
 </template>
 
 <script>
+import Form from "./contact/Form"
     export default {
+        components: {
+            Form
+        },
         name: "Content"
     }
 </script>
