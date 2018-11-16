@@ -1,25 +1,43 @@
-<head>
-  <title>TodoList</title>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<body>
-  <h1>Welcome to Meteor!</h1>
+    <title>Todo List App</title>
 
-  {{> hello}}
-  {{> info}}
-</body>
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
+  </head>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
-</template>
+  <body>
+    <main role="main">
+      <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+              <h1>Todo List</h1>
+              <hr>
+            </div>
+          </div>
+        <!-- Example row of columns -->
+        <div class="row">
+          <div class="col-md-12">
+            {{> main}}
+          </div>
+        </div>
 
-<template name="info">
-  <h2>Learn Meteor!</h2>
-  <ul>
-    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
-    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
-    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
-  </ul>
+        <hr>
+
+      </div> <!-- /container -->
+
+    </main>
+
+    <footer class="container">
+      <p>&copy; TodoList 2018</p>
+    </footer>
+  </body>
+
+<template name="main">
+  this is the main template
 </template>
