@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Palindrome", "Palindrome\Pa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Format", "Format\Format.csproj", "{1EA8706D-6BC1-4CC9-8D2A-946B809D4EC1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BufferOptions", "BufferOptions\BufferOptions.csproj", "{79903C16-9203-45C2-90FA-CD8C6CBECFAD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1EA8706D-6BC1-4CC9-8D2A-946B809D4EC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EA8706D-6BC1-4CC9-8D2A-946B809D4EC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EA8706D-6BC1-4CC9-8D2A-946B809D4EC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79903C16-9203-45C2-90FA-CD8C6CBECFAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79903C16-9203-45C2-90FA-CD8C6CBECFAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79903C16-9203-45C2-90FA-CD8C6CBECFAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79903C16-9203-45C2-90FA-CD8C6CBECFAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

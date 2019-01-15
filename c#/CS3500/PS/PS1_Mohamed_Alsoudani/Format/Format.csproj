@@ -48,5 +48,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BufferOptions\BufferOptions.csproj">
+      <Project>{79903c16-9203-45c2-90fa-cd8c6cbecfad}</Project>
+      <Name>BufferOptions</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
