@@ -7,10 +7,13 @@ using BufferOptions;
 
 namespace Palindrome
 {
+    /// <summary>
+    /// Palindrome is a program that takes input and determines if it is a Palindrome
+    /// </summary>
     class Program
     {
         /// <summary>
-        /// Returns the words if they are Palindromes or returns nothing
+        /// Outputs the words if they are Palindromes or Outputs nothing
         /// </summary>
         static void Main(string[] args)
         {
@@ -19,7 +22,10 @@ namespace Palindrome
             {
                 foreach (string output in DisallowOutputBuffer.FilterIterator(line, s => s.Reverse().SequenceEqual(s) ? s : ""))
                 {
-                    Console.WriteLine(output);
+                    if (!String.IsNullOrEmpty(output))
+                    {
+                        Console.WriteLine(output);
+                    }
                 }
             }
         }

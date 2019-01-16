@@ -7,10 +7,14 @@ using BufferOptions;
 
 namespace LowerCase
 {
+    /// <summary>
+    /// LowerCase is a commandLine Program that was made to output a lowercased version of a given input
+    /// </summary>
     class Program
     {
         /// <summary>
-        /// returns the words lowercased without an output buffer "returns it as it processes each of the word of the inputs on its own"
+        /// Outputs the words lowercased without an output buffer 
+        /// "returns it as it processes each of the word of the inputs on its own"
         /// </summary>
         static void Main(string[] args)
         {
