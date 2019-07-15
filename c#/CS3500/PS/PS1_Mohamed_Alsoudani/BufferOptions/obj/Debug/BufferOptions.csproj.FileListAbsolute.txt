@@ -1,6 +1,0 @@
-C:\Users\mrhas_000\code\mumarasa\c#\CS3500\PS\PS1_Mohamed_Alsoudani\BufferOptions\obj\Debug\BufferOptions.csprojAssemblyReference.cache
-C:\Users\mrhas_000\code\mumarasa\c#\CS3500\PS\PS1_Mohamed_Alsoudani\BufferOptions\obj\Debug\BufferOptions.csproj.CoreCompileInputs.cache
-C:\Users\mrhas_000\code\mumarasa\c#\CS3500\PS\PS1_Mohamed_Alsoudani\BufferOptions\bin\Debug\BufferOptions.dll
-C:\Users\mrhas_000\code\mumarasa\c#\CS3500\PS\PS1_Mohamed_Alsoudani\BufferOptions\bin\Debug\BufferOptions.pdb
-C:\Users\mrhas_000\code\mumarasa\c#\CS3500\PS\PS1_Mohamed_Alsoudani\BufferOptions\obj\Debug\BufferOptions.dll
-C:\Users\mrhas_000\code\mumarasa\c#\CS3500\PS\PS1_Mohamed_Alsoudani\BufferOptions\obj\Debug\BufferOptions.pdb
