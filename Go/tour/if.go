@@ -25,3 +25,15 @@ func main() {
 // if v := math.Pow(x, n); v < lim {
 // 	return v
 // }
+
+
+
+
+// Variables declared inside an if short statement are also available inside any of the else blocks.
+
+// if v := math.Pow(x, n); v < lim {
+// 	return v
+// } else {
+// 	fmt.Printf("%g >= %g\n", v, lim)
+// }
+// can't use v here, though
