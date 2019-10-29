@@ -51,7 +51,21 @@ func slices() {
 	fmt.Println(mySlice)
 
 	// in the previous example the slicing is happening on the line with the syntax [int:int] where each int is a index of an element of the array to be sliced
-	you can think of slices as references to arrays, meaning that a slice must have an underlying array
+
+
+
+	// you can think of slices as references to arrays, meaning that a slice must have an underlying array that it references and once a slice is changed its underlying array is also changed, let me domenstrate:
+	names := [4]string{"Moe", "Prachi", "Chris", "Preston"}
+	fmt.Println("the original array:", names)
+
+	b := names[0:2]
+	c := names[2:4]
+
+	fmt.Println("sliced it up:", b, c)
+
+	b[0] = "NewName"
+
+	fmt.Println("the original array after changing the slice:", names) // NewName is there instead of Moe because the slice mutated its underlying array
 
 }
 
