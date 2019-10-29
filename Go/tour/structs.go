@@ -11,7 +11,6 @@ func main() {
 	rect := Rectangle{12, 44}
 	fmt.Println(rect.x, rect.y)
 
-
 	another := Rectangle{
 		y: 1233,
 		x: 2e3,
