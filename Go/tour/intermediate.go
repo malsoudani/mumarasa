@@ -33,11 +33,26 @@ func pointers() {
 }
 
 func slices() {
+	// lets start with arrays in Golang, the first thing you need to know is that they are fixed size and not resizable,
+	// which seems very limiting, but don't worry because Go has a way to make them work better
+
 	var a [2]string
 	a[0] = "hello"
 	a[1] = "world"
 
-	fmt.Println(a);
+	fmt.Println(a)
+
+
+	// now lets start with slices
+
+	primes := [6]int{2, 3, 5, 7, 11, 13}
+	mySlice := primes[1:4] // this is gonna be [3, 5, 7]
+
+	fmt.Println(mySlice)
+
+	// in the previous example the slicing is happening on the line with the syntax [int:int] where each int is a index of an element of the array to be sliced
+	you can think of slices as references to arrays, meaning that a slice must have an underlying array
+
 }
 
 // func closures()
@@ -45,5 +60,6 @@ func slices() {
 func main() {
 	// structs()
 	// pointers()
+	slices()
 }
 
