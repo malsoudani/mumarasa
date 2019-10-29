@@ -74,9 +74,9 @@ func slices() {
 
 	// a slice literal is like an array literal except you don't provide it with the length
 
-example:
-	this is an array literal: [3]int{1, 2, 3}
-	and this creates a an array and then builds a slice that references it and returns that: []int{1, 2, 3}
+        // example:
+	// this is an array literal: [3]int{1, 2, 3}
+	// and this creates a an array and then builds a slice that references it and returns that: []int{1, 2, 3}
 
 }
 
