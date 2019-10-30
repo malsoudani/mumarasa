@@ -52,8 +52,6 @@ func slices() {
 
 	// in the previous example the slicing is happening on the line with the syntax [int:int] where each int is a index of an element of the array to be sliced
 
-
-
 	// you can think of slices as references to arrays, meaning that a slice must have an underlying array that it references and once a slice is changed its underlying array is also changed, let me domenstrate:
 	names := [4]string{"Moe", "Prachi", "Chris", "Preston"}
 	fmt.Println("the original array:", names)
@@ -90,6 +88,26 @@ func slices() {
 	// a[:10]
 	// a[0:]
 	// a[:]
+
+
+	// a slices zero value is nil and its capacity and length are both 0
+
+
+	// slices can also be built with the make() function; this is how you create dynamically sized arrays
+
+
+	// the make function allocates a zeroed array and returns a slice that refers to that array
+
+
+	x := make([]int, 6)
+	fmt.Println(len(x), cap(x))
+
+	// it is common to append new elements to a slice so go gives a built in append() function to handle that
+
+	y := []int{};
+	y = append(y, 23);
+	fmt.Println(y);
+
 }
 
 // func closures()
