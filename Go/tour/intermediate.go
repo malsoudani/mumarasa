@@ -78,6 +78,18 @@ func slices() {
 	// this is an array literal: [3]int{1, 2, 3}
 	// and this creates a an array and then builds a slice that references it and returns that: []int{1, 2, 3}
 
+	// lets talk about slice defaults
+
+	// when slicing you may omit the high or low bounds to use their defaults
+	// the default is 0 for the low bound and the length of the array for the high bound 
+
+	// for the following array: var a [10]int
+	// these are all equavilant statements
+
+	// a[0:10]
+	// a[:10]
+	// a[0:]
+	// a[:]
 }
 
 // func closures()
