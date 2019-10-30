@@ -102,7 +102,7 @@ func slices() {
 	x := make([]int, 6)
 	fmt.Println(len(x), cap(x))
 
-	// it is common to append new elements to a slice so go gives a built in append() function to handle that
+	// it is common to append new elements to a slice so Go gives a built in append() function to handle that
 
 	y := []int{};
 	y = append(y, 23);
