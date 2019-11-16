@@ -34,9 +34,9 @@ func main() {
 }
 
 func handleRequest(conn net.Conn) {
-	msg, err := bufio.NewReader(conn).ReadString("\n")
+	msg, err := bufio.NewReader(conn).ReadString('\n')
 	if err != nil {
-		fmt.Println("Error reading: ", error.Error())
+		fmt.Println("Error reading: ", err.Error())
 	}
 	fmt.Print("message received from the client: ", string(msg))
 	conn.Close()
