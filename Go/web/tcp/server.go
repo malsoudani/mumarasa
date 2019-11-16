@@ -29,11 +29,11 @@ func main() {
 		if err != nil {
 			log.Fatal("Error accepting: ", err.Error())
 		}
-		go handleRequest(conn)
+		go handleRequest(conn) // V2 now we handle the connection within a custom handler and invoking it as a goroutine
 	}
 }
 
-func handleRequest(conn net.Conn) {
+func handleRequest(conn net.Conn) { // V2 is to handle the request that was sniffed by listener.Accept(), we are writing a custom handler for that purpose called handleRequest(), handleRequest reads the connection into the buffer "bufio" until the first occurence of "\n", handles errors, and if all goes well it prints it to the standard output
 	msg, err := bufio.NewReader(conn).ReadString('\n')
 	if err != nil {
 		fmt.Println("Error reading: ", err.Error())
