@@ -10,7 +10,7 @@ import (
 const (
 	CONN_HOST      = "localhost" // host
 	CONN_PORT      = "8080"      // connection port
-	ADMIN_USER     = "admin"     // adding basic auth
+	ADMIN_USER     = "admin"     // adding basic auth ... V2
 	ADMIN_PASSWORD = "secret"
 )
 
@@ -43,3 +43,14 @@ func main() {
 }
 
 // this demonstration should print "Hello World!" on port 8080
+
+// v2 added  BasicAuth function
+// lets talk about adding basic auth:
+// 1. the first thing to remember from the the first version of this iteration is that http.ListenAndServe expected a handler to be passed in as its second argument which means that it expected a function reference for its arguments
+// notice that we are making a handler factory in BasicAuth method which returns a closure "func reference"
+// which means that at the time of passing the function down to the ListenAndServe method, nothing about the basic auth mechanism has been invoked, however your hello world handler which evaluates after handling authentication would have been bound to the handler variable but not invoked nor evaluated and same thing goes for the realm variable but thats pretty obvious since its just a string rather than a func.
+
+// 2. BasicAuth is a part of the net/http package, it is invokable only on a type *Request
+// if we were to run the following command on the command line while this server is running: curl -i -H 'Authorization:Basic YWRtaW46c2VjcmV0' http://localhost:8080/
+// notice that we are passing a basic Auth header with base64 encoded string "admin:secret" and it returned a "Hello World!"
+// while it would return "You are unauthorized to access the application." otherwise.
