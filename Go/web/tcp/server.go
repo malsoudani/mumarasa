@@ -39,5 +39,6 @@ func handleRequest(conn net.Conn) { // V2 is to handle the request that was snif
 		fmt.Println("Error reading: ", err.Error())
 	}
 	fmt.Print("message received from the client: ", string(msg))
+	conn.Write([]byte(msg)) // V3: writing back to the connection stream, now when running your tcp server you can write back the client this way
 	conn.Close()
 }
