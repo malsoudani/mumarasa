@@ -23,20 +23,21 @@ func main() {
 		log.Fatal("error starting tcp server: ", err)
 	}
 	defer listener.Close()                           // defer closing the listener for when the program stops other wise you are gonna be hogging that port
-	log.Println("listening on " + HOST + ":" + PORT) // log some stuff on the command line
+	log.Println("Listening on " + HOST + ":" + PORT) // log some stuff on the command line
 	for {                                            // this is where the magic kinda happens! so this represents our "event" loop in the sense that this is a constant loop that accepts stuff form the listener and logs the response
 		conn, err := listener.Accept()
 		if err != nil {
 			log.Fatal("Error accepting: ", err.Error())
 		}
-		log.Println(conn)
+		go handleRequest(conn)
 	}
 }
 
-func handleRequest() {
+func handleRequest(conn net.Conn) {
 	msg, err := bufio.NewReader(conn).ReadString("\n")
 	if err != nil {
 		fmt.Println("Error reading: ", error.Error())
 	}
 	fmt.Print("message received from the client: ", string(msg))
+	conn.Close()
 }
