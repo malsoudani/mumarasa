@@ -26,3 +26,7 @@ func main() {
 		return
 	}
 }
+
+// by sending gzipped responses we save network bandwidth and download time eventually rendering the page faster.
+// GZIP compression happens as follows:
+// the browser starts by sending a request header that tells the server that the browser can accept compressed content (.gzip and .deflate) specifically and if the server can respond with it then it will by sending back the compressed form along with "Content-Encoding : gzip". The point is that the browser only makes a request for a gzipped content and doesn't demand it per se.
