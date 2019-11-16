@@ -1,6 +1,8 @@
 package main
 
 import (
+	"bufio"
+	"fmt"
 	"log"
 	"net"
 )
@@ -29,4 +31,12 @@ func main() {
 		}
 		log.Println(conn)
 	}
+}
+
+func handleRequest() {
+	msg, err := bufio.NewReader(conn).ReadString("\n")
+	if err != nil {
+		fmt.Println("Error reading: ", error.Error())
+	}
+	fmt.Print("message received from the client: ", string(msg))
 }
