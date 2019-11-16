@@ -32,3 +32,5 @@ func main() {
 // the browser starts by sending a request header that tells the server that the browser can accept compressed content (.gzip and .deflate) specifically and if the server can respond with it then it will by sending back the compressed form along with "Content-Encoding : gzip". The point is that the browser only makes a request for a gzipped content and doesn't demand it per se.
 
 // lets talk a little about the http.NewServeMux() method ... well it is pretty self explainatory .. it returns a new ServeMux struct for us. But the more interesting question is what is a ServeMux? well a ServeMux is a `struct` wrapping type that basically represents the router portion of the net/http package. It maps a handler to a distict pattern of a route.
+
+// one thing to note is that when we ignore calling a new mux strcut like we did with in the server.go file then net/http internall works with the DefaultServeMux which is a default mux that has list of handlers pre-registered
