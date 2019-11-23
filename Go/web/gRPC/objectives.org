@@ -8,5 +8,3 @@
 *** Server Streaming
 *** Client Streaming
 *** Bi-Directional Streaming
-
-
