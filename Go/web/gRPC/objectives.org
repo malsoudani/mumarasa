@@ -1,0 +1,12 @@
+* gRPC learning objectives
+** Learn the gRPC theory (to understand the internals and how they work)
+** gRPV vs. REST comparasion
+** writing service definitions in .proto files
+** Generate server and client code
+** Implementing Unary, Server Streaming, Client Streaming, and Bi-Directional Streaming API
+*** Unary   
+*** Server Streaming
+*** Client Streaming
+*** Bi-Directional Streaming
+
+
