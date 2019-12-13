@@ -13,13 +13,12 @@ type Job struct {
 }
 
 func outputText(j *Job, goGroup *sync.WaitGroup) {
-	// fmt.Println(j)
 	for j.i < j.max {
 		time.Sleep(1 * time.Millisecond)
 		fmt.Println(j.text)
 		j.i++
 	}
-	goGroup.Done()
+	goGroup.Done() // denoting a single iteration
 }
 
 func main() {
@@ -37,6 +36,6 @@ func main() {
 	go outputText(hello, goGroup)
 	go outputText(world, goGroup)
 
-	goGroup.Add(2)
-	goGroup.Wait()
+	goGroup.Add(2) // the Add method here specifies how many Done() messages should the goGroup recieve before satisfying its wait
+	goGroup.Wait() // this does the actual waiting
 }
