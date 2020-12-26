@@ -10,17 +10,3 @@ class PrintClose(bt.Strategy):
 
     def next(self):
         self.log('close: ', self.datas[0])
-
-
-#instiate the cerebro engine
-cerebro = bt.Cerebro()
-
-data = bt.feeds.YahooFinanceCSVData(dataname='backtrader/AMZN.csv')
-
-cerebro.adddata(data)
-
-# Add strategy to cerebro 
-cerebro.addstrategy(PrintClose)
-
-#Run cerebro
-cerebro.run()
