@@ -23,6 +23,7 @@ class MACrossover(bt.Strategy):
         self.order = None
         self.slow_sma = bt.indicators.MovingAverageSimple(self.datas[0], period=self.p.pslow)
         self.fast_sma = bt.indicators.MovingAverageSimple(self.datas[0], period=self.p.pfast)
+        self.crossover = bt.indicators.CrossOver(self.fast_sma, self.slow_sma)
 
     def notify_order(self, order):
         if order.status in [order.Submitted, order.Accepted]:
@@ -52,12 +53,12 @@ class MACrossover(bt.Strategy):
         if not self.position:
             # we have no open positions right now..
             # if the fast period just crossed above the slow period
-            if self.fast_sma[0] > self.slow_sma[0] and self.fast_sma[-1] < self.slow_sma[-1]:
+            if self.crossover > 0:
                 self.log(f'just bought: {self.dataclose[0]:2f}')
                 # set the order variable so that we don't run through the position again.
                 self.order = self.buy()
             # otherwise if the fast period just crossed under the slow period
-            elif self.fast_sma[0] < self.slow_sma[0] and self.fast_sma[-1] > self.slow_sma[-1]:
+            elif self.crossover < 0:
                 self.log(f'just sold: {self.dataclose[0]:2f}')
                 # set the order variable so that we don't run through the position again.
                 self.order = self.sell()
