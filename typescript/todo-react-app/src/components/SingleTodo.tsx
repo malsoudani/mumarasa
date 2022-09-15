@@ -8,7 +8,7 @@ interface Props {
 }
 
 const SingleTodo: React.FC<Props> = ({ todo, todos, setTodos }) => {
-  return <div>SingleTodo</div>;
+  return <div>{todo.todo}</div>;
 };
 
 export default SingleTodo;
